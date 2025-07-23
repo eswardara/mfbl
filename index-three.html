@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LEGENDR Login</title>
+  <title> Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -88,10 +88,10 @@
       </div>
 
       <!-- Login Form -->
-      <form class="space-y-4 pt-2">
+      <form class="space-y-4 pt-2" action="dashboard.html">
         <div>
           <label class="text-sm mb-1 block">Login</label>
-          <input type="text" placeholder="User Name"
+          <input type="text" placeholder="User Name" 
             class="w-full bg-white/10 border border-gray-500 rounded-lg px-4 py-3 text-white input-glow"/>
         </div>
 
@@ -102,9 +102,9 @@
               class="w-full bg-white/10 border border-gray-500 rounded-lg px-4 py-3 text-white pr-10 input-glow"/>
             <span class="absolute right-4 top-3 text-gray-300 cursor-pointer hover:text-white">👁️</span>
           </div>
-        </div>
+        </div> <br>
 
-        <button type="submit"
+      <button type="submit" onclick="Login()"
           class="w-full py-3 rounded-lg font-semibold gradient hover:opacity-90 transition-all duration-200 hover:scale-105">
           Login
         </button>
@@ -120,5 +120,11 @@
 
   </div>
 
+  <script type="text/javascript">
+    function Login()
+    {
+      window.location.href="dashboard.html";
+    }
+  </script>
 </body>
 </html>
