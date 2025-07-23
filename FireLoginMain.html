@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LegendR Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('fireimg1.jpg') no-repeat center center/cover;
+      height: 100vh;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn-gradient {
+      background: linear-gradient(to right, #00c6ff, #7b61ff);
+      transition: all 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px #00c6ff;
+    }
+
+    .tab-active {
+      background: linear-gradient(to right, #2af598, #009efd);
+      color: white;
+      padding: 0.4rem 1.5rem;
+      border-radius: 9999px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center px-8">
+
+  <div class="flex w-full max-w-6xl h-[550px]">
+
+    <!-- Left: Company Text -->
+    <div class="flex-1 flex flex-col justify-center text-white pr-10">
+      <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg">"Brave Hearts,<br> Swift Response: <br><span class="text-[#00c6ff]"> Mumbai Fire Brigade!"</span></h1>
+      <!-- <p class="text-lg text-white/80 mb-6 max-w-md">Empowering heroes with cutting-edge response and safety technology. Join our mission to protect and serve with precision.</p> -->
+    </div>
+
+    <!-- Right: Glass Login Form -->
+    <div class="glass w-[420px] p-10 text-white">
+
+      <!-- Logo -->
+     <!-- Logos Section -->
+<div class="absolute top-4 right-4 flex gap-4">
+  <img src="logo1.png" alt="Logo 1" class="h-12 w-auto"/>
+  <img src="logo2.png" alt="Logo 2" class="h-12 w-auto"/>
+</div>
+
+
+      <!-- Tabs -->
+      <div class="flex gap-4 mb-8 text-sm mt-10">
+        <button class="tab-active">Sign in</button>
+        <!-- <button class="px-5 py-2 border border-white/10 rounded-full hover:bg-white/10 transition">Register</button> -->
+      </div>
+
+      <!-- Username -->
+      <div class="mb-4">
+        <label class="text-sm mb-1 block">Username</label>
+<input type="text" placeholder="Enter username"
+  class="w-full px-4 py-3 rounded-md bg-white/10 text-white placeholder-white border border-white/20 focus:outline-none"/>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-6">
+        <label class="text-sm mb-1 block">Password</label>
+<input type="password" placeholder="Enter password"
+  class="w-full px-4 py-3 rounded-md bg-white/10 text-white placeholder-white border border-white/20 focus:outline-none"/>
+      </div>
+
+      <!-- Login Button -->
+      <button class="btn-gradient w-full py-3 text-lg rounded-md text-white font-semibold">Login</button>
+
+      <!-- Forgot password -->
+      <div class="text-sm mt-4 text-white/60 hover:text-white cursor-pointer">Forgot password?</div>
+    </div>
+  </div>
+
+</body>
+</html>
