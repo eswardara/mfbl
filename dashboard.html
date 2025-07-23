@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glassy Dashboard - Black Purple</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-black via-[#0a1733] to-black text-white font-sans min-h-screen p-4">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 flex flex-wrap justify-between items-center mb-6 px-4 py-4 glass rounded-xl shadow-lg">
+    <div class="flex items-center space-x-4">
+      
+      <span class="text-white text-lg font-bold">
+        
+        <img src="logo2.png" alt="Logo" class="w-10 h-10">
+      </span>
+      <span class="text-white text-lg font-bold">
+        
+        <img src="logo3.png" alt="Logo" class="w-10 h-10">
+      </span>
+    </div>
+    <div class="hidden md:flex items-center space-x-4 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <button class="text-white font-semibold px-4 py-1 rounded-lg bg-black border border-blue-900">Dashboard</button>
+      <span class="text-gray-300 hover:bg-blue-900 hover:text-white px-3 py-1 rounded-lg transition-colors cursor-pointer">MIS Report</span>
+      <span class="text-gray-300 hover:bg-blue-900 hover:text-white px-3 py-1 rounded-lg transition-colors cursor-pointer">Upload</span>
+      <span class="text-gray-300 hover:bg-blue-900 hover:text-white px-3 py-1 rounded-lg transition-colors cursor-pointer">Draft</span>
+      <span class="text-gray-300 hover:bg-blue-900 hover:text-white px-3 py-1 rounded-lg transition-colors cursor-pointer">Settings</span>
+  
+    </div>
+    <!-- Search removed -->
+    <div class="flex items-center space-x-4 mt-4 md:mt-0 ml-auto">
+      <!-- Notifications Icon -->
+      <button aria-label="Notifications" class="relative focus:outline-none focus:ring-2 focus:ring-blue-900 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-200 hover:text-blue-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        </svg>
+        <span class="absolute -top-1 -right-1 bg-red-600 text-xs text-white rounded-full px-1.5">3</span>
+      </button>
+      <!-- Messages Icon -->
+      <button aria-label="Messages" class="relative focus:outline-none focus:ring-2 focus:ring-blue-900 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-200 hover:text-blue-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8l-4.28 1.07A1 1 0 013 19.13V17.1c0-.29.13-.56.35-.74A7.963 7.963 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+        <span class="absolute -top-1 -right-1 bg-red-600 text-xs text-white rounded-full px-1.5">5</span>
+      </button>
+      <div class="relative group">
+        <button
+          id="profile-menu"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-label="Open profile menu"
+          class="focus:outline-none focus:ring-2 focus:ring-blue-900 rounded-full"
+        >
+          <img src="https://cdn-icons-png.flaticon.com/512/1995/1995522.png" alt="Fire Brigade Avatar" class="w-10 h-10 rounded-full border-2 border-blue-900 bg-white" />
+        </button>
+        <!-- Profile Dropdown -->
+        <div class="absolute right-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-lg py-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-50" role="menu" aria-labelledby="profile-menu">
+          <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700 focus:bg-blue-900 focus:text-white outline-none" tabindex="0" role="menuitem">Profile</a>
+          <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700 focus:bg-blue-900 focus:text-white outline-none" tabindex="0" role="menuitem">Settings</a>
+          <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700 focus:bg-blue-900 focus:text-white outline-none" tabindex="0" role="menuitem">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Project Cards -->
+    <section class="space-y-6">
+      <div class="glass rounded-xl p-6">
+        <h2 class="text-lg font-semibold mb-4">Dashboard</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+            <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+                <div class="flex justify-between">
+                  
+                </div>
+                <p class="text-6xl font-semibold text-center">54</p>
+                <p class="text-gray-400 text-sm text-center">Total Number of Reports</p>
+              </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+            </div>
+            <p class="text-6xl font-semibold text-center">20</p>
+            <p class="text-gray-400 text-sm text-center">Pending Reports</p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+            </div>
+            <p class="text-6xl font-semibold text-center">2</p>
+            <p class="text-gray-400 text-sm text-center">Reports with CR</p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+            </div>
+            <p class="text-6xl font-semibold text-center">5</p>
+            <p class="text-gray-400 text-sm text-center">Reports with ADFO</p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+            </div>
+            <p class="text-6xl font-semibold text-center">2</p>
+            <p class="text-gray-400 text-sm text-center">Reports with DFO</p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+            </div>
+            <p class="text-6xl font-semibold text-center">2</p>
+            <p class="text-gray-400 text-sm text-center">Reports with Dy CFO</p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+            </div>
+            <p class="text-6xl font-semibold text-center">0</p>
+            <p class="text-gray-400 text-sm text-center">Reports with CFO</p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+            </div>
+            <p class="text-6xl font-semibold text-center">25</p>
+            <p class="text-gray-400 text-sm text-center">Completed/Submitted Reports</p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+
+            </div>
+            <p class="text-6xl font-semibold text-center">54</p>
+            <p class="text-gray-400 text-sm text-center">Total Number of Reports</p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+           
+              
+            </div>
+            <p class="text-4xl font-semibold text-center">FIR PENDING</p>
+            <p class="text-gray-400 text-sm text-center"></p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+            </div>
+            <p class="text-4xl font-semibold text-center">TEMPLATES</p>
+            <p class="text-gray-400 text-sm text-center"></p>
+          </div>
+          <div class="glass p-6 rounded-lg space-y-2 h-56 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_4px_32px_0_rgba(30,64,175,0.8)] hover:ring-2 hover:ring-blue-400 hover:bg-blue-900/30 hover:scale-105 z-10">
+            <div class="flex justify-between">
+              
+            </div>
+            <p class="text-4xl font-semibold text-center">OTHER THAN ASSIGNED</p>
+            <p class="text-gray-400 text-sm text-center"></p>
+          </div>
+          
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const ctx = document.getElementById('incomeChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [
+          {
+            label: 'Paid',
+            data: [3200, 2400, 2800, 6000, 4200, 5000],
+            backgroundColor: 'rgba(168, 85, 247, 0.7)'
+          },
+          {
+            label: 'Unpaid',
+            data: [1400, 1100, 900, 1600, 1000, 1200],
+            backgroundColor: 'rgba(30, 30, 30, 0.8)'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
