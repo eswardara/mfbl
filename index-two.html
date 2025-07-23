@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('fireimg1.jpg') no-repeat center center/cover;
+      background: url('fireman_img.png') no-repeat center center/cover;
       height: 100vh;
     }
 
@@ -43,6 +43,25 @@
 </head>
 <body class="flex items-center justify-center px-8">
 
+<style>
+      .animated-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: linear-gradient(270deg, #00231699, #020015c0, #3b82f699, #a21caf99, #f59e4299, #34D39999);
+        background-size: 400% 400%;
+        animation: bgMove 12s ease-in-out infinite;
+        mix-blend-mode: lighten;
+        opacity: 0.5;
+      }
+      @keyframes bgMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    </style>
+    <div class="animated-bg"></div>
   <div class="flex w-full max-w-6xl h-[550px]">
 
     <!-- Left: Company Text -->
